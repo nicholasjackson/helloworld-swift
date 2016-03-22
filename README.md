@@ -1,7 +1,9 @@
 # helloworld-swift
 Hello World Swift is an example microservice using the IBM Kitura framework [https://github.com/IBM-Swift/Kitura.git](https://github.com/IBM-Swift/Kitura.git).  The code is built and tested using an experimental version of the Minke gem so all you need is the docker toolbox for your Mac.  
 
-Currently there are no XCTests and even if there were Minke can not run the test suite, this is currently work in progress.
+Currently there are no XCTests and even if there were Minke can not run the test suite, this is currently work in progress.  
+
+[![Circle CI](https://circleci.com/gh/nicholasjackson/helloworld-swift.svg?style=svg)](https://circleci.com/gh/nicholasjackson/helloworld-swift)  
 
 
 ## Build instructions

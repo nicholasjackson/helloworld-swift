@@ -1,12 +1,11 @@
 suggestedsearch-swift:
-  image: suggestedsearch-swift
+  image: helloworld-swift
   ports:
     - "8090:8090"
   environment:
     - "CONSUL=consul:8500"
   links:
     - consul:consul
-    - elasticsearch:elasticsearch
 consul:
   image: progrium/consul
   ports:
@@ -15,8 +14,3 @@ consul:
     - "9600:53/udp"
   hostname: node1
   command: "-server -bootstrap -ui-dir /ui"
-elasticsearch:
-  image: elasticsearch:1.7
-  ports:
-    - "9200:9200"
-    - "9300:9300"
