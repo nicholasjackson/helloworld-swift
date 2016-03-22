@@ -23,7 +23,7 @@ cucumber:
     url: <%= "http://#{ENV['DOCKER_IP']}:9500" %>
   health_check:
     enabled: true
-    url: <%= "http://#{ENV['DOCKER_IP']}:8001/v1/health" %>
+    url: <%= "http://#{ENV['DOCKER_IP']}:8090/v1/health" %>
 after_build:
   copy_assets:
     -
