@@ -1,0 +1,9 @@
+{
+  "Environment": "{{key "api/helloworld-swift/environment"}}",
+  "StatsDServerIP": "{{key "api/helloworld-swift/statsdserver_url"}}",
+  "ElasticSearch": {
+    "URL": "{{key "api/helloworld-swift/elasticsearch_url"}}",
+    "SearchQueryIndex": "{{key "api/helloworld-swift/searchquery_index"}}",
+    "SiteSearchIndex": "{{key "api/helloworld-swift/sitesearch_index"}}"
+  }
+}

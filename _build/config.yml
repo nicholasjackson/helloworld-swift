@@ -1,0 +1,34 @@
+---
+application_name: 'helloworld-swift'
+namespace: 'nicholasjackson'
+language: swift
+docker_registry:
+  url: <%= ENV['DOCKER_REGISTRY_URL'] %>
+  user: <%= ENV['DOCKER_REGISTRY_USER'] %>
+  password: <%= ENV['DOCKER_REGISTRY_PASS'] %>
+  email: <%= ENV['DOCKER_REGISTRY_EMAIL'] %>
+  namespace: <%= ENV['DOCKER_NAMESPACE'] %>
+docker:
+  docker_file: './dockerfile/helloworld-swift/'
+  compose_file: './dockercompose/helloworld-swift/docker-compose.yml'
+run:
+  consul_loader:
+    enabled: true
+    config_file: './consul_keys.yml'
+    url: <%= "http://#{ENV['DOCKER_IP']}:9500" %>
+cucumber:
+  consul_loader:
+    enabled: true
+    config_file: './consul_keys.yml'
+    url: <%= "http://#{ENV['DOCKER_IP']}:9500" %>
+  health_check:
+    enabled: true
+    url: <%= "http://#{ENV['DOCKER_IP']}:8001/v1/health" %>
+after_build:
+  copy_assets:
+    -
+      from: <%= "../.build/debug/HelloWorld" %>
+      to: './dockerfile/helloworld-swift'
+    -
+      from: './swagger_spec/swagger.yml'
+      to: './dockerfile/helloworld-swift/swagger_spec'

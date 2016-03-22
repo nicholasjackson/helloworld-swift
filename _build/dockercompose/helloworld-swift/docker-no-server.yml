@@ -1,0 +1,13 @@
+consul:
+  image: progrium/consul
+  ports:
+    - "9400:8400"
+    - "9500:8500"
+    - "9600:53/udp"
+  hostname: node1
+  command: "-server -bootstrap -ui-dir /ui"
+elasticsearch:
+  image: elasticsearch:1.7
+  ports:
+    - "9200:9200"
+    - "9300:9300"

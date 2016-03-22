@@ -1,0 +1,8 @@
+---
+  api:
+    helloworld-swift:
+      environment: 'development'
+      statsdserver_url: 'statsd:8125'
+      elasticsearch_url: 'http://elasticsearch:9200'
+      searchquery_index: 'dev_search_queries'
+      sitesearch_index: 'dev_site_search'
